@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Bottle from "./components/Bottle";
+import GiftCard from "./components/GiftCard";
 import Logo from "./components/Logo";
 import ProductCard from "./components/ProductCard";
 import Reveal from "./components/Reveal";
@@ -14,6 +15,7 @@ import {
   PRODUCTS,
   SITE_URL,
 } from "./data/products";
+import { GIFT_READY_PICKS } from "./data/temu-products";
 
 const SLIDES = [
   {
@@ -197,6 +199,30 @@ export default function HomePage() {
               <ProductCard key={p.slug} product={p} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="gift-heading" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-head">
+            <p className="eyebrow">Gift Shop</p>
+            <h2 id="gift-heading">Gift-ready picks</h2>
+            <p>
+              Beautiful bottles and gift sets, chosen for gift-ready
+              packaging. Prices as listed — check the live price before
+              buying.
+            </p>
+          </div>
+          <div className="product-grid">
+            {GIFT_READY_PICKS.map((p) => (
+              <GiftCard key={p.slug} product={p} />
+            ))}
+          </div>
+          <p style={{ textAlign: "center", marginTop: "1.5rem" }}>
+            <Link href="/gifts" className="btn">
+              Browse the Gift Shop
+            </Link>
+          </p>
         </div>
       </section>
 

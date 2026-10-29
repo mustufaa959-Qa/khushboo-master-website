@@ -46,6 +46,9 @@ export default function SiteHeader() {
             <Link href="/shop?category=Both">For Men &amp; Women</Link>
           </li>
           <li>
+            <Link href="/gifts">Gift Shop</Link>
+          </li>
+          <li>
             <Link href="/about">About Us</Link>
           </li>
           <li>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CHANNEL_URL } from "../data/products";
+import { AFFILIATE_DISCLOSURE } from "../data/temu-products";
 import Logo from "./Logo";
 
 export default function SiteFooter() {
@@ -9,10 +10,7 @@ export default function SiteFooter() {
         <div className="footer-brand">
           <Logo size={64} />
           <p className="footer-name">Khushboo Master</p>
-          <p>
-            A fragrance channel and catalogue. Affiliate links have not been
-            added yet.
-          </p>
+          <p>{AFFILIATE_DISCLOSURE}</p>
           <p>
             <a href={CHANNEL_URL} target="_blank" rel="noopener noreferrer">
               Watch on YouTube
@@ -27,6 +25,9 @@ export default function SiteFooter() {
             </li>
             <li>
               <Link href="/shop">Shop</Link>
+            </li>
+            <li>
+              <Link href="/gifts">Gift Shop</Link>
             </li>
             <li>
               <Link href="/about">About Us</Link>
@@ -50,6 +51,26 @@ export default function SiteFooter() {
             </li>
           </ul>
         </nav>
+        <nav aria-label="Footer — gift shop">
+          <h2>Gift Shop</h2>
+          <ul>
+            <li>
+              <Link href="/gifts">All Gift Picks</Link>
+            </li>
+            <li>
+              <Link href="/gifts?category=men">Men</Link>
+            </li>
+            <li>
+              <Link href="/gifts?category=women">Women</Link>
+            </li>
+            <li>
+              <Link href="/gifts?category=unisex">Unisex</Link>
+            </li>
+            <li>
+              <Link href="/gifts?category=gift%20set">Gift Sets</Link>
+            </li>
+          </ul>
+        </nav>
         <nav aria-label="Footer — site">
           <h2>Site</h2>
           <ul>
@@ -68,8 +89,9 @@ export default function SiteFooter() {
         </nav>
       </div>
       <p className="footer-base">
-        © {new Date().getFullYear()} Khushboo Master. Product details are
-        limited to verified video facts until affiliate products are supplied.
+        © {new Date().getFullYear()} Khushboo Master. Video details are
+        limited to verified video facts; gift details come only from the
+        supplier listing file.
       </p>
     </footer>
   );
