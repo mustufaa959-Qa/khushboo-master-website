@@ -93,7 +93,13 @@ export default function GiftPage({ params }: { params: { slug: string } }) {
           ) : (
             <p className="gift-price">Check the live price.</p>
           )}
-          <p>{giftPackagingText(product)}</p>
+          {/* Solid-perfume entries carry the same photo-fact text in
+              packagingNotes and whatYouSee; show it once, under
+              "What you see" below. Existing gift products have distinct
+              texts, so this changes nothing for them. */}
+          {giftPackagingText(product) !== product.whatYouSee && (
+            <p>{giftPackagingText(product)}</p>
+          )}
           <h2>What you see</h2>
           <p>{product.whatYouSee}</p>
           <p className="product-facts">As listed: {product.viralEvidence}</p>
